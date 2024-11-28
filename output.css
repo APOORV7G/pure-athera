@@ -2056,6 +2056,10 @@ html {
   margin-top: 0.75rem;
 }
 
+.flex {
+  display: flex;
+}
+
 .grid {
   display: grid;
 }
