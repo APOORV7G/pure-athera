@@ -1,0 +1,5 @@
+@layer base {
+  :root {
+    scrollbar-color: oklch(0.3 0.024 238.81) white ;
+  }
+}

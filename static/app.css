@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@source "./*/*.{html,js}";
+@source "./*.html";
+@plugin "daisyui";
+@plugin "daisyui/theme" { 
+    name: "pa-light";
+    default: true;
+    prefersdark: false;
+    color-scheme: "light";
+    --color-base-100: oklch(98% 0.002 247.839);
+    --color-base-200: oklch(96% 0.003 264.542);
+    --color-base-300: oklch(92% 0.006 264.531);
+    --color-base-content: oklch(0.3 0.024 238.81);
+    --color-primary: oklch(0.84 0.1602 80.72);
+    --color-primary-content: oklch(0% 0 0);
+    --color-secondary: oklch(0.93 0.0068 325.63);
+    --color-secondary-content: oklch(28% 0.091 267.935);
+    --color-accent: oklch(0.86 0.193 154.02);
+    --color-accent-content: oklch(14% 0 0);
+    --color-neutral: oklch(0.3 0.024 238.81);
+    --color-neutral-content: oklch(98% 0.002 247.839);
+    --color-info: oklch(78% 0.154 211.53);
+    --color-info-content: oklch(30% 0.056 229.695);
+    --color-success: oklch(62% 0.194 149.214);
+    --color-success-content: oklch(26% 0.051 172.552);
+    --color-warning: oklch(66% 0.179 58.318);
+    --color-warning-content: oklch(28% 0.066 53.813);
+    --color-error: oklch(70% 0.191 22.216);
+    --color-error-content: oklch(25% 0.092 26.042);
+    --radius-selector: 0rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+    --color-special: oklch(0.3 0.024 238.81);
+  }
+  
+@plugin "daisyui/theme" {
+    name: "pa-dark";
+    default: true;
+    prefersdark: false;
+    color-scheme: "dark";
+    --color-base-100: oklch(0.3 0.024 238.81);
+    --color-base-200: oklch(0.27 0.024 238.81);
+    --color-base-300: oklch(0.22 0.024 238.81);
+    --color-base-content: oklch(100% 0 0);
+    --color-primary: oklch(0.84 0.1602 80.72);
+    --color-primary-content: oklch(0% 0 0);
+    --color-secondary: oklch(0.93 0.0068 325.63);
+    --color-secondary-content: oklch(28% 0.091 267.935);
+    --color-accent: oklch(0.86 0.193 154.02);
+    --color-accent-content: oklch(14% 0 0);
+    --color-neutral: oklch(0% 0 0);
+    --color-neutral-content: oklch(98% 0.002 247.839);
+    --color-info: oklch(78% 0.154 211.53);
+    --color-info-content: oklch(30% 0.056 229.695);
+    --color-success: oklch(62% 0.194 149.214);
+    --color-success-content: oklch(26% 0.051 172.552);
+    --color-warning: oklch(66% 0.179 58.318);
+    --color-warning-content: oklch(28% 0.066 53.813);
+    --color-error: oklch(70% 0.191 22.216);
+    --color-error-content: oklch(25% 0.092 26.042);
+    --radius-selector: 0rem;
+    --radius-field: 0.5rem;
+    --radius-box: 1rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 0;
+    --noise: 0;
+    --color-special: oklch(0.84 0.1602 80.72);  
+  }
+
+ .font-jm {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.font-ub {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.text-special {
+  color: var(--color-special);
+  line-height: 1.4;
+  text-shadow: 0 0 0.3rem var(--color-special);
+}
+.ecosystem-item {
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+}
+
+.ecosystem-item::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: -100%;
+   width: 100%;
+   height: 100%;
+   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+   transition: left 0.6s;
+}
+
+.ecosystem-item:hover::before {
+   left: 100%;
+}
+
+.ecosystem-item:hover {
+   transform: translateY(-8px) scale(1.02);
+   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+   filter: brightness(1.1);
+}
+
+.fancy-btn {
+   position: relative;
+   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2));
+   backdrop-filter: blur(10px);
+   border: 2px solid rgba(255,255,255,0.5);
+   box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.fancy-btn::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   border-radius: inherit;
+   padding: 2px;
+   background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+   background-size: 300% 300%;
+   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+   mask-composite: exclude;
+   animation: borderGlow 3s ease infinite;
+   opacity: 0;
+   transition: opacity 0.3s ease;
+}
+
+.fancy-btn:hover::before {
+   opacity: 1;
+}
+
+@keyframes borderGlow {
+   0%, 100% { background-position: 0% 50%; }
+   50% { background-position: 100% 50%; }
+}
+
+.fancy-btn:hover {
+   transform: translateY(-8px) scale(1.05);
+   box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+   filter: brightness(1.2);
+}
+
+.fancy-btn:active {
+   transform: translateY(-4px) scale(1.02);
+   transition: all 0.1s ease;
+}
+
+.btn-particles::before {
+   content: '';
+   position: absolute;
+   width: 4px;
+   height: 4px;
+   background: rgba(255,255,255,0.8);
+   border-radius: 50%;
+   top: 20%;
+   left: 20%;
+   animation: particle1 2s infinite;
+}
+
+.btn-particles::after {
+   content: '';
+   position: absolute;
+   width: 3px;
+   height: 3px;
+   background: rgba(255,255,255,0.6);
+   border-radius: 50%;
+   top: 70%;
+   right: 30%;
+   animation: particle2 2.5s infinite;
+}
+
+@keyframes particle1 {
+   0%, 100% { transform: translate(0, 0) scale(0); opacity: 0; }
+   50% { transform: translate(20px, -20px) scale(1); opacity: 1; }
+}
+
+@keyframes particle2 {
+   0%, 100% { transform: translate(0, 0) scale(0); opacity: 0; }
+   50% { transform: translate(-15px, -25px) scale(1); opacity: 1; }
+}
+
+.portfolio-btn:hover {
+   animation: pulse-accent 0.6s ease-in-out;
+}
+
+.demo-btn:hover {
+   animation: pulse-primary 0.6s ease-in-out;
+}
+
+@keyframes pulse-accent {
+   0% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.4); }
+   70% { box-shadow: 0 0 0 20px rgba(168, 85, 247, 0); }
+   100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+}
+
+@keyframes pulse-primary {
+   0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+   70% { box-shadow: 0 0 0 20px rgba(59, 130, 246, 0); }
+   100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+
+  
