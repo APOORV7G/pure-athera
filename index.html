@@ -617,8 +617,8 @@
 
                 radioButtons.forEach(rb => {
                     rb.addEventListener('change', () => {
-                        companyField.classList.toggle('hidden', rb.value !== 'organization' || !rb.checked);
-                        companyNameInput.required = rb.value === 'organization';
+                        companyField.classList.toggle('hidden', rb.value !== 'Organization' || !rb.checked);
+                        companyNameInput.required = rb.value === 'Organization';
                     });
                 });
                 document.querySelector('form').addEventListener('submit', async function (e) {
